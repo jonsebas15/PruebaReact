@@ -58,7 +58,7 @@ function LoginPage(){
       <> usuario: juanp <br></br>
       contraseña: password123
         <div className='loginForm'>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className='formLogin'>
                 <label>USUARIO</label>
                 <input type="text" name="usuario" onChange={handleChange}  placeholder="Usuario"></input>
                 <label>CONTRASEÑA</label>

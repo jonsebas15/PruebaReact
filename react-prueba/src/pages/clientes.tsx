@@ -1,9 +1,11 @@
 import 'animate.css';
 import './clientes.css';
+import {useNavigate} from 'react-router-dom'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 
 function ClientesPage() {
+    const navigate = useNavigate();
     interface IdTipoDocumento {
         id_tipodocumento: number;
         tipo: string;
@@ -48,7 +50,9 @@ function ClientesPage() {
                 </thead>
                 <tbody>
                     {clientes.map(Clientes =>(
-                    <tr key={Clientes.id}>
+                    <tr key={Clientes.id} onClick={()=>{
+                        navigate("/nuevoCliente/" + Clientes.id)
+                    }}>
                         <td>{Clientes.idTipoDocumento.tipo}</td>
                         <td>{Clientes.numeroDocumento}</td>
                         <td>{Clientes.nombre}</td>
@@ -59,7 +63,6 @@ function ClientesPage() {
                     ))}
                 </tbody>
             </table>
-
         </>
     )
 }
