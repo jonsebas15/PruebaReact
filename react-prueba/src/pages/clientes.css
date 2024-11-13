@@ -1,0 +1,28 @@
+.animate__animated.animate__backInLeft {
+  animation-delay: 0.5s; 
+  }
+
+  .animate__animated.animate__zoomIn {
+    animation-delay: 2s; /
+    }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  table thead{
+    background-color: #788199;
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  tr:hover {background-color: coral;}
+
+  .titulo{
+    display: block;
+    text-align: center;
+  }
