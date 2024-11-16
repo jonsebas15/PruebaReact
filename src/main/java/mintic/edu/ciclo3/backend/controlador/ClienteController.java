@@ -36,7 +36,7 @@ public class ClienteController {
     public List<Cliente> consultarTodo(){
         return (clienteService.getClientes());
     }
-    
+    @CrossOrigin(origins = "http://localhost:5173")
     @GetMapping("/list/{id}")
     public Cliente buscarPorId(@PathVariable Long id){
         return clienteService.getCliente(id);

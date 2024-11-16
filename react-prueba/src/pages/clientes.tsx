@@ -1,6 +1,6 @@
 import 'animate.css';
 import './clientes.css';
-import {useNavigate} from 'react-router-dom'
+import {useNavigate, Params} from 'react-router-dom'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 
@@ -27,7 +27,6 @@ function ClientesPage() {
     useEffect(()=>{
         async function loadClients(){
             const res = await getAllClients();
-            console.log(res)
             setClientes(res.data)
         }
         loadClients();
@@ -36,6 +35,7 @@ function ClientesPage() {
 
     return (
         <>
+        <button className='botonIngresar surprise' onClick={()=>{navigate("/nuevocliente")}}>Nuevo Cliente</button>
             <h1 className="animate__animated animate__backInLeft titulo"> CLIENTES  </h1>
             <table className="animate__animated animate__zoomIn">
                 <thead>
@@ -51,7 +51,7 @@ function ClientesPage() {
                 <tbody>
                     {clientes.map(Clientes =>(
                     <tr key={Clientes.id} onClick={()=>{
-                        navigate("/nuevoCliente/" + Clientes.id)
+                        navigate("/clientes/"+Clientes.id)
                     }}>
                         <td>{Clientes.idTipoDocumento.tipo}</td>
                         <td>{Clientes.numeroDocumento}</td>
